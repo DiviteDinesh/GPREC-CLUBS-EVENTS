@@ -1,0 +1,689 @@
+
+/* Reset padding for all elements */
+*{
+  padding: 0;
+  margin: 0;
+}
+main{
+  background-color: rgb(235, 235, 235);
+}
+#root {
+  max-width: 100vw;
+  margin: 0;
+  text-align: center;
+  
+} 
+/* CSS HEX */
+:root {
+  --prussian-blue: #003049ff;
+  --prussian-blue-light: rgb(23, 105, 149);
+  --fire-engine-red: #d62828ff;
+  --orange-wheel: #f77f00ff;
+  --xanthous: #fcbf49ff;
+  --vanilla: #eae2b7ff;
+}
+
+/* CSS HSL */
+:root {
+  --prussian-blue-hsl: hsla(201, 100%, 14%, 1);
+  --fire-engine-red-hsl: hsla(0, 69%, 50%, 1);
+  --orange-wheel-hsl: hsla(31, 100%, 48%, 1);
+  --xanthous-hsl: hsla(40, 97%, 64%, 1);
+  --vanilla-hsl: hsla(51, 55%, 82%, 1);
+}
+:root {
+  --gradient-top: linear-gradient(20deg,#49cffc2e, #eae2b7);
+  --gradient-event: linear-gradient(20deg,var(--prussian-blue), #eae2b7, white, var(--prussian-blue));
+  --gradient-bottom: linear-gradient(160deg,#49cffc2e, #eae2b7);
+  --gradient-full: linear-gradient(80deg,#a6e9ff, #eae2b7);
+}
+.gradient-all{
+  background: var(--gradient-top);
+}
+#home {
+  background: var(--gradient-top);
+}
+
+
+/* Main app container styles for layout and full viewport height */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+  min-width: 100vw;
+}/* Navbar styles for full width, background color, padding, and alignment */
+/* Footer styles for full width, background color, padding, and alignment */
+footer {
+  width: 100%;
+  background: var(--gradient-bottom);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+/*////////////////////*/
+.navbar {
+  width: 100%;
+  /* background: var(--gradient-full); */
+  background: #eeeeee;
+  /* padding: 1rem; */
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Override container class for navbar to ensure full width */
+.navbar .container-fluid {
+  max-width: 90%;
+}
+
+/* Navbar brand styles */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}/* Navbar link hover effect - Increase text size smoothly */
+.nav-link {
+  position: relative;
+  color: var(--prussian-blue);
+  font-weight: 600;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover effect: smooth text scaling */
+.nav-link:hover {
+  transform: scale(1.1); /* Slightly increase size */
+}
+
+
+/* Logo styles */
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Navbar navigation styles */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-collapse{
+  display: flex;
+  justify-content: end;
+}
+
+/* Fix alignment for smaller screens */
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-collapse {
+    padding: 10px;
+  }
+}
+
+/* Fix dropdown styles */
+.dropdown-menu {
+  min-width: 200px;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust menu items */
+.nav-item {
+  margin: 5px 0;
+}
+
+.dropdown-item     {
+  background-color: #f8f9fa;
+  color: #0056b3;
+}
+
+/*////////////////////*/
+
+  /* Clubs Section */
+  #clubs {
+    /* background:linear-gradient(140deg, #49cffc2e, #eae2b7); */
+    background: var(--gradient-bottom);
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  /* Club Card Container */
+  .club-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* margin: 10px; */
+  }
+
+  /* Club Card */
+  .club-card {
+    width: 90%;
+    max-width: 280px;
+    /*Fixedmaxwidth*/min-width: 250px;
+    /*Preventsshrinkingtoomuch*/height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #16654F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-in-out;
+    /*Fade-inanimation*/-webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-animation: fadeIn 0.5s ease-in-out;
+    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  /* Prevent Club Cards from Growing Uncontrollably */
+  .club-card-container {
+    flex: 1 1 300px;
+    max-width: 300px;
+  }
+
+  /* Hover Effect */
+  .club-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Club Card Image */
+  .club-card-image {
+    width: 100%;
+    height: 150px; /* Fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .club-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+
+  /* Image Hover Effect */
+  .club-card:hover {
+    transform: scale(1.05);
+    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+  }
+
+  /* Dark Overlay */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Show Overlay on Hover */
+  .club-card:hover .overlay {
+    opacity: 1;
+  }
+
+  /* Club Card Body */
+  .club-card-body {
+    padding: 1rem;
+  }
+
+  /* Club Card Title */
+  .club-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffe735;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Club Description */
+  .club-description {
+    font-size: 1rem;
+    color: #ffffff;
+    max-height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-word;
+    white-space: normal;
+    padding-right: 5px;
+  }
+
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Design (Single Card Per Row on Mobile) */
+  @media (max-width: 500px) {
+    #clubs{
+      min-height: 60vh;
+    }
+    .club-card {
+      width: 95%; /* Makes sure only one card is displayed per row */
+      max-width: 280px; /* Ensures no resizing issues */
+    }
+
+    .club-card-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .d-flex.overflow-hidden.justify-content-center {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+    }
+
+    .club-card-image {
+      height: 120px; /* Reduce image height for mobile */
+    }
+
+    .club-title {
+      font-size: 1.1rem;
+    }
+
+    .club-description {
+      font-size: 0.9rem;
+      -webkit-line-clamp: 2; /* Reduce to 2 lines on mobile */
+    }
+  }
+
+  /* Flexbox Fix for Club Cards Display */
+  .d-flex.overflow-hidden.justify-content-center {
+    flex-wrap: wrap;
+  }
+
+  .club-card-container {
+    flex: 1 1 300px; /* Ensures even spacing */
+    max-width: 300px;
+  }
+
+
+  
+
+/*////////////////////*/
+
+
+/* Events Section */
+#events {
+  background: var(--gradient-top);
+}
+
+/* Event Card */
+.event-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--prussian-blue);
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Card Image */
+.event-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Image Container */
+.card-img-container {
+  overflow: hidden;
+  height: 200px; /* Ensures uniform height */
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover .card-img-top {
+  transform: scale(1.1);
+}
+
+/* Card Content */
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: hsla(40, 97%, 64%, 1);
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.text-muted {
+  font-size: 0.9rem;
+  color: #fff !important;
+}
+
+/* Marquee Section */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: #f8f9fa00;
+  padding: 10px 0;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 15s linear infinite;
+}
+
+.marquee-item {
+  display: inline-block;
+  padding: 0 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--xanthous);
+
+}
+
+/* Marquee Animation */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Carousel Section */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.card-row {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.scroll-btn:first-of-type {
+  left: 0;
+}
+
+.scroll-btn:last-of-type {
+  right: 0;
+}
+
+
+/*////////////////////*/
+
+/* Testimonial CSS *//* Testimonials Section */
+/* Testimonials Section */
+#testimonials {
+  min-height: 
+  
+  70vh;
+  background: var(--gradient-bottom);
+  padding: 40px 0;
+}
+
+.testimonials-container {
+  display: flex;
+  overflow-x: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 20px;
+}
+
+.testimonial-child {
+  flex: 0 0 auto;
+  width: 320px;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 40vh;
+  background: rgba(89, 152, 181, 0.21);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-card:hover  {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+/* Testimonial Image */
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 3px thin #0077b5;
+  margin-bottom: 8px;
+}
+
+/* Testimonial Name */
+.testimonial-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000000b5;
+  margin-bottom: 5px;
+}
+
+/* LinkedIn Icon */
+.linkedin-link {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+
+.linkedin-link:hover .linkedin-icon {
+  transform: scale(1.2);
+  stroke: #0077b5;
+}
+
+/* Testimonial Text */
+.testimonial-text {
+  font-size: 1rem;
+  min-height: fit-content;
+  color: #000000;
+  margin-top: 10px;
+  text-wrap : wrap;
+}
+
+/* Smooth Scrolling Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/*////////////////////*/
+/* college bot */
+/* Gradient button */
+/* Chatbot Section */
+#chatbot {
+  background: var(--gradient-top);
+  padding: 60px 0;  
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glassmorphism Card */
+.chatbot-card {
+  /*max-width: 500px;
+  */width: 90vw;
+  padding: 30px;
+  background: rgba(0, 47, 73, 0.889);
+  border-radius: 15px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  color: #ffffff;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  -webkit-animation: fadeIn 1s ease-in-out;
+}
+
+.chatbot-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Glowing Title */
+.title-glow {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #6a11cb, 0 0 20px #2575fc;
+}
+
+/* Input Field */
+.chatbot-input {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.chatbot-input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 12px rgba(106, 17, 203, 0.7);
+}
+
+/* Button */
+.btn-gradient {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Response Box */
+.response-box {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* Spinner */
+.spinner-border {
+  vertical-align: middle;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

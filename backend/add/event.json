@@ -1,0 +1,12 @@
+{
+    "eventId": "event123",
+    "eventName": "Tech Fest 2025",
+    "description": "A national-level coding competition with exciting prizes.",
+    "instructions": "Participants must bring their own laptop and college ID card.",
+    "registrationProcess": "Register online before the deadline. No spot registration allowed.",
+    "registrationLinks": [
+      "https://techfest.com/register"
+    ],
+    "contact": "9876543210"
+  }
+  

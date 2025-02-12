@@ -1,0 +1,36 @@
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Avoid cropping */
+    border-radius: 10px;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background: none;
+    border: none;
+  }
+  
+  .modal-body img {
+    max-width: 90%;
+    max-height: 80vh;
+  }
+  

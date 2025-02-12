@@ -1,0 +1,14 @@
+{
+    "clubId": "club001",
+    "name": "Coding Club",
+    "description": "A club for coding enthusiasts who love problem-solving and development.",
+    "themes": ["Competitive Programming", "Web Development"],
+    "eventsActivities": ["Hackathons", "Coding Contests"],
+    "membershipDetails": "Open to all students with an interest in programming.",
+    "leadershipContact": "John Doe, 9876543210",
+    "images": [
+      "https://club.com/image1.jpg",
+      "https://club.com/image2.jpg"
+    ]
+  }
+  
